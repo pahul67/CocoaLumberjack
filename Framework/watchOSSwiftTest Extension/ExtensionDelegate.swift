@@ -10,14 +10,14 @@ import WatchKit
 import CocoaLumberjack
 import CocoaLumberjackSwift
 
-let ddloglevel = DDLogLevel.Verbose
+let ddloglevel = DDLogLevel.verbose
 
 private func printSomething() {
-    DDLogVerbose("Verbose");
-    DDLogDebug("Debug");
-    DDLogInfo("Info");
-    DDLogWarn("Warn");
-    DDLogError("Error");
+    DDLogVerbose(message: "Verbose");
+    DDLogDebug(message: "Debug");
+    DDLogInfo(message: "Info");
+    DDLogWarn(message: "Warn");
+    DDLogError(message: "Error");
 }
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
@@ -27,13 +27,13 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         
         let formatter = Formatter()
         DDTTYLogger.sharedInstance().logFormatter = formatter
-        DDLog.addLogger(DDTTYLogger.sharedInstance())
+        DDLog.add(DDTTYLogger.sharedInstance())
         
-        DDLogVerbose("Verbose");
-        DDLogDebug("Debug");
-        DDLogInfo("Info");
-        DDLogWarn("Warn");
-        DDLogError("Error");
+        DDLogVerbose(message: "Verbose");
+        DDLogDebug(message: "Debug");
+        DDLogInfo(message: "Info");
+        DDLogWarn(message: "Warn");
+        DDLogError(message: "Error");
         
         printSomething()
         
