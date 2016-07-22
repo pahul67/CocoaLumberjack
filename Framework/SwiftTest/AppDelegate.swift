@@ -8,16 +8,17 @@
 
 import Cocoa
 import CocoaLumberjack
+
 import CocoaLumberjackSwift
 
-let ourLogLevel = DDLogLevel.Verbose
+let ourLogLevel = DDLogLevel.verbose
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet weak var window: NSWindow!
     
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
-        DDLog.addLogger(DDTTYLogger.sharedInstance())
+        DDLog.add(DDTTYLogger.sharedInstance())
 		
         defaultDebugLevel = .Warning
 
